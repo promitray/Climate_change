@@ -61,6 +61,6 @@ Time taken/ difficulties/ scope for improvement:
 
 2. Difficulties: I spent some time trying to make the data persist in the database but I am not able to do this at the moment (within the recommended time window) despite using volumes. The data gets lots once the containers are stopped and images are deleted. Other minor hassles included the data itself: some entries were identical but differed only in longitude, so I had to change the database structure (primary keys) and then continue.
 
-3. Scope for improvement: I would really like to make the containerized database contain the data. Other improvement could include more elegant API end points (keeping REST principles intact) and fewer interdependecies.
+3. Scope for improvement: I would really like to make the containerized database contain the data. Other improvement could include more elegant API end points (keeping REST principles intact) and fewer interdependecies. Alternatively, an AWS RDS could be used. Django would allow for a visual interface to the API which could be useful in adding, removing and modifying data. 
 
 
