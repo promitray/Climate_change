@@ -8,9 +8,6 @@ Please clone this repo (https://github.com/promitray/Climate_change) and then na
 $ sudo docker-compose up -d db
 
 $ sudo docker-compose run --rm flaskapp /bin/bash -c "cd /opt/services/flaskapp/src && python -c  'import database; database.init_db()'"
-
-Use this only for  truncate
-$ sudo docker-compose run --rm flaskapp /bin/bash -c "cd /opt/services/flaskapp/src && python -c  'import database; database.recreate_database()'"
 ```
 
   mkdir data (docker2/data)  IMPORTANT: TO LOAD DATA INTO DATABASE, PLEASE COPY CSV FILE INTO THE this 'data' DIRECTORY: I have not yet been able to circumvent this step (yet).
