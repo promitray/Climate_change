@@ -11,8 +11,8 @@ Use this only for  truncate
 $ sudo docker-compose run --rm flaskapp /bin/bash -c "cd /opt/services/flaskapp/src && python -c  'import database; database.recreate_database()'"
 ```
 
-                                            TO LOAD DATA INTO DATABASE
-#################################################################################################################################################
+                                         IMPORTANT: TO LOAD DATA INTO DATABASE, PLEASE COPY CSV FILE INTO THE 'data' DIRECTORY: I have not yet been able to circumvent this step (yet).
+############################################################################################################################################################################
 A. If local postgres service is running stop it
 ```bash
 $ sudo service postgresql stop
@@ -30,19 +30,21 @@ COPY temp_data FROM '/data/GlobalLandTemperaturesByCity.csv' DELIMITER ',' CSV H
 
 ```
 Exit postgres container
-##################################################################################################################################################
+##############################################################################################################################################################################
 
 2. Bring up the cluster
 ```bash
 $ sudo docker-compose up -d
 ```
 
-3. Please navigate to the examples directory and execute the python scripts to see the API (insert, update and getRecords endpoints) in action.
+3. Please navigate to the examples directory and execute the python (.py) scripts to see the API (insert, update and getRecords endpoints) in action.
 
 ###########################################
 Examples:
 
-cd examples
+cd examples:
+
+In the first query, we order by temperature (ASC/ DESC can be adjusted in the query) and then take the first occurence of every city. Some caution be exercised, same cities could (rarely) belong to two different countries.
 
 a. GET reuqest with start date set to 1.1.2001 and end date unspecified (today taken as default), set LIMIT to 1. For input json structure, please see .py file for example 1. 
 
