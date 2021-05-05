@@ -1,7 +1,7 @@
 Instructions for usage:
 ##################################
 
-Please clone this repo and then navigate into the directory 'docker2': cd docker2
+Please clone this repo (https://github.com/promitray/Climate_change) and then navigate into the directory 'docker2': cd docker2
 
 1. Bootstrap the DB
 ```bash
@@ -56,3 +56,14 @@ a. GET reuqest with start date set to 1.1.2001 and end date unspecified (today t
 b. POST request using json response above and increase AverateTemperature by 0.1 (can be coded out continuously). Resulting json input is {'dt': dt, 'AverageTemperature': 39.256, 'AverageTemperatureUncertainty': 0.37, 'City': 'Ahvaz', 'Country': 'Iran', 'Latitude': '31.35N', 'Longitude': '49.01E'} with dt set to 25-4-2021 (random date last month) in datetime format. It can be verified that this entry is created. 
 
 c. PUT request using json input as {'dt': dt, 'AverageTemperature': 37.256, 'City': 'Ahvaz'} with dt set to 25-4-2021 (random date last month referenced above) which updates above entry. Caution to be exercised while identifying rows with dt and city name. Some countries have same city names :) In this case, however, it works.
+
+###############################################################
+Time taken/ difficulties/ scope for improvement:
+
+1. 3 hours of coding including references on how to containerize databases and flask applications using databases. Spent about 20 min after cross checking data from API response and actual CSV file.
+
+2. Difficulties: I spent some time trying to make the data persist in the database but I am not able to do this at the moment (within the recommended time window) despite using volumes. The data gets lots once the containers are stopped and images are deleted. Other minor hassles included the data itself: some entries were identical but differed only in longitude, so I had to change the database structure (primary keys) and then continue.
+
+3. Scope for improvement: I would really like to make the containerized database contain the data. Other improvement could include more elegant API end points (keeping REST principles intact) and fewer interdependecies.
+
+
