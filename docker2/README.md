@@ -1,7 +1,7 @@
 Instructions for usage:
 ##################################
 
-Please navigate into the directory 'docker2': cd docker2
+Please clone this repo and then navigate into the directory 'docker2': cd docker2
 
 1. Bootstrap the DB
 ```bash
@@ -14,6 +14,7 @@ $ sudo docker-compose run --rm flaskapp /bin/bash -c "cd /opt/services/flaskapp/
 ```
 
   mkdir data (docker2/data)  IMPORTANT: TO LOAD DATA INTO DATABASE, PLEASE COPY CSV FILE INTO THE this 'data' DIRECTORY: I have not yet been able to circumvent this step (yet).
+  From directory 'docker2':
 ############################################################################################################################################################################
 A. If local postgres service is running stop it
 ```bash
