@@ -1,6 +1,8 @@
 Instructions for usage:
 ##################################
 
+Please visit https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data and fetch CSV file titled 'GlobalLandTemperaturesByCity.csv'.
+
 Please clone this repo (https://github.com/promitray/Climate_change) and then navigate into the directory 'docker2': cd docker2
 
 1. Bootstrap the DB
@@ -10,7 +12,7 @@ $ sudo docker-compose up -d db
 $ sudo docker-compose run --rm flaskapp /bin/bash -c "cd /opt/services/flaskapp/src && python -c  'import database; database.init_db()'"
 ```
 
-  mkdir data (docker2/data)  IMPORTANT: TO LOAD DATA INTO DATABASE, PLEASE COPY CSV FILE INTO THE this 'data' DIRECTORY: I have not yet been able to circumvent this step (yet).
+  mkdir data (docker2/data)  IMPORTANT: TO LOAD DATA INTO DATABASE, PLEASE COPY CSV FILE (GlobalLandTemperaturesByCity.csv) INTO THE this 'data' DIRECTORY: I have not yet been able to circumvent this step (yet).
   From directory 'docker2':
 ############################################################################################################################################################################
 A. If local postgres service is running stop it
